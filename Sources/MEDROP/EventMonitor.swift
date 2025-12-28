@@ -2,11 +2,13 @@ import Cocoa
 
 class EventMonitor {
     private var monitor: Any?
-    private let onOptionKeyChanged: (Bool) -> Void
-    private var isOptionPressed = false
+    private let onKeyChanged: (Bool) -> Void
+    private var isKeyPressed = false
+    private let modifierFlag: NSEvent.ModifierFlags
 
-    init(onOptionKeyChanged: @escaping (Bool) -> Void) {
-        self.onOptionKeyChanged = onOptionKeyChanged
+    init(modifierFlag: NSEvent.ModifierFlags, onKeyChanged: @escaping (Bool) -> Void) {
+        self.modifierFlag = modifierFlag
+        self.onKeyChanged = onKeyChanged
     }
 
     func start() {
@@ -23,12 +25,12 @@ class EventMonitor {
     }
 
     private func handleEvent(_ event: NSEvent) {
-        let isOption = event.modifierFlags.contains(.option)
+        let isPressed = event.modifierFlags.contains(modifierFlag)
         
         // Debounce/Check state change to avoid repeated calls
-        if isOption != isOptionPressed {
-            isOptionPressed = isOption
-            onOptionKeyChanged(isOption)
+        if isPressed != isKeyPressed {
+            isKeyPressed = isPressed
+            onKeyChanged(isPressed)
         }
     }
 }
