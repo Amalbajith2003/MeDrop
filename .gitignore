@@ -1,0 +1,38 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+*.xccheckout
+*.moved-aside
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build artifacts
+*.app
+*.dSYM.zip
+*.dSYM
+
+# Swift
+*.swiftmodule
+*.swiftdoc
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# Status files (optional - remove if you want to track these)
+STATUS.md
