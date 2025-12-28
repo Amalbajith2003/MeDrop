@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- App Identity -->
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleExecutable</key>
+    <string>MeDrop</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.medrop.app</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>MeDrop</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    
+    <!-- System Requirements -->
+    <key>LSMinimumSystemVersion</key>
+    <string>12.0</string>
+    
+    <!-- Menu Bar Only App (No Dock Icon) -->
+    <key>LSUIElement</key>
+    <true/>
+    
+    <!-- High Resolution Support -->
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+    
+    <!-- TCC Compliance: Accessibility Permission -->
+    <key>NSAccessibilityUsageDescription</key>
+    <string>MeDrop needs accessibility access to detect keyboard modifier keys (Option/Command/Control) while dragging files. This allows the drop zone to appear when you hold your chosen activation key.</string>
+    
+    <!-- App Sandbox (Security) -->
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+    
+    <!-- Sandbox Permissions: Only what's needed -->
+    <!-- User Selected Files (via drag and drop) -->
+    <key>com.apple.security.files.user-selected.read-only</key>
+    <true/>
+    
+    <!-- Network (for AirDrop) -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+    
+    <!-- Hardened Runtime -->
+    <key>com.apple.security.cs.allow-jit</key>
+    <false/>
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <false/>
+    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+    <false/>
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <false/>
+    
+    <!-- App Category -->
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.utilities</string>
+    
+    <!-- Copyright -->
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2025 MeDrop. All rights reserved.</string>
+</dict>
+</plist>
