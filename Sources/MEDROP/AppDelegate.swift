@@ -23,15 +23,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var currentModifier: ModifierKeyPreference = .option
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        print("MeDrop Started")
-        
         // Create menu bar icon
         setupMenuBar()
         
-        // request permissions check
+        // Request accessibility permissions
         let trusted = AXIsProcessTrustedWithOptions([kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
         if !trusted {
-            print("Accessibilty permissions not granted yet. Monitor might fail.")
+            // Permissions will be requested via system dialog
         }
         
         // Initialize AirDrop Manager
@@ -129,21 +127,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         currentModifier = .option
         startEventMonitor()
         updateMenu()
-        print("✓ Switched to Option (⌥) key")
     }
     
     @objc private func changeToCommand() {
         currentModifier = .command
         startEventMonitor()
         updateMenu()
-        print("✓ Switched to Command (⌘) key")
     }
     
     @objc private func changeToControl() {
         currentModifier = .control
         startEventMonitor()
         updateMenu()
-        print("✓ Switched to Control (⌃) key")
     }
     
     @objc private func showAbout() {
