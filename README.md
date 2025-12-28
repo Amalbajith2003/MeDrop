@@ -25,27 +25,44 @@ MeDrop is a sleek macOS utility that revolutionizes how you use AirDrop. Simply 
 
 ### Installation
 
+**Option 1: Build .app Bundle (Recommended)**
+
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/MeDrop.git
+   git clone https://github.com/Amalbajith2003/MeDrop.git
    cd MeDrop
    ```
 
-2. **Run the app:**
+2. **Build the app:**
    ```bash
+   ./build_app.sh
+   ```
+
+3. **Install to Applications:**
+   ```bash
+   mv MeDrop.app /Applications/
+   open /Applications/MeDrop.app
+   ```
+
+**Option 2: Run from Source**
+
+1. **Clone and run:**
+   ```bash
+   git clone https://github.com/Amalbajith2003/MeDrop.git
+   cd MeDrop
    swift run MEDROP
    ```
 
-3. **Grant Accessibility Permissions:**
-   - The app will prompt you to grant accessibility permissions
-   - Go to System Settings → Privacy & Security → Accessibility
-   - Enable MeDrop
+**Grant Accessibility Permissions:**
+- The app will prompt you to grant accessibility permissions
+- Go to System Settings → Privacy & Security → Accessibility
+- Enable MeDrop
 
 ### Usage
 
-1. **Start MeDrop** - Run the app (it sits in the background)
+1. **Start MeDrop** - The app runs in the background with a menu bar icon
 2. **Drag a file** - From Finder, Desktop, or any app
-3. **Hold Option (⌥)** - While dragging, the pill appears on the right edge
+3. **Hold your activation key** - Default is Option (⌥), customizable from menu bar
 4. **Drop files** - Drop one or multiple files into the pill
 5. **Manage files** - Hover over files to see remove buttons
 6. **Send** - Click the blue "SEND" button to open AirDrop
@@ -175,9 +192,15 @@ let height: CGFloat = 320
 
 ## 🔮 Roadmap
 
-- [ ] Menu bar icon with preferences
+**Completed:**
+- [x] Menu bar icon with quit option
+- [x] Customizable activation key (Option/Command/Control)
+- [x] .app bundle builder
+- [x] Individual file removal
+- [x] Multi-monitor support
+
+**Planned:**
 - [ ] Customizable position (left/right edge)
-- [ ] Keyboard shortcuts
 - [ ] Sound effects
 - [ ] Drag preview thumbnails
 - [ ] Recent devices quick access
